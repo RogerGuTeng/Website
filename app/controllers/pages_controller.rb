@@ -80,12 +80,18 @@ class PagesController < ApplicationController
       format.json { head :no_content }
     end
   end
-    def homepage
-        @pages = Page.all
-        
-        respond_to do |format|
-            format.html # homepage.html.erb
-            format.json { render json: @pages }
-        end
+  def homepage
+    @pages = Page.all
+    respond_to do |format|
+      format.html # homepage.html.erb
+      format.json { render json: @pages }
     end
+  end
+  def projects
+        
+    respond_to do |format|
+      format.html # projects.html.erb
+    end
+  end
+  
 end

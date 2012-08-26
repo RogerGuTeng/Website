@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
+  <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -18,10 +18,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#"><%= image_tag('logo.png', :alt => 'TengGu') %></a>
+        <a class="brand" href="<%= root_path%>"><%= image_tag('logo.png', :alt => 'TengGu') %></a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to " ", "#" %></li>
+            <li class= "divider-vertical">
+				<%= link_to 'Projects', projects_path %>
+			</li>
+			<li class = "divider-vertical">
+				<%= link_to 'Education', education_path%>
+			</li>	
 
           </ul>
         </div>

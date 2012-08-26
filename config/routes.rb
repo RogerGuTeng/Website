@@ -6,6 +6,9 @@ PersonalWeb::Application.routes.draw do
     resources :pages do
         get 'homepage', :on => :collection
     end
+    match '/projects' => 'pages#projects'
+    match '/education' => 'pages#education'
+    
     
 
   # The priority is based upon order of creation:
