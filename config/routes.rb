@@ -1,13 +1,15 @@
 PersonalWeb::Application.routes.draw do
-  resources :pages
     
+  resources :educations
+
+  resources :projects
+
     root :to => 'pages#homepage'
     
     resources :pages do
         get 'homepage', :on => :collection
     end
-    match '/projects' => 'pages#projects'
-    match '/education' => 'pages#education'
+
     
     
 

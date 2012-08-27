@@ -93,5 +93,11 @@ class PagesController < ApplicationController
       format.html # projects.html.erb
     end
   end
+  def education
+        
+    respond_to do |format|
+      format.html # education.html.erb
+    end
+  end
   
 end

@@ -9,8 +9,9 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar navbar-fixed-top navbar-inverse" id= "main-nav">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -20,33 +21,39 @@
         </a>
         <a class="brand" href="<%= root_path%>"><%= image_tag('logo.png', :alt => 'TengGu') %></a>
         <div class="nav-collapse">
-          <ul class="nav">
-            <li class= "divider-vertical">
-				<%= link_to 'Projects', projects_path %>
+          <ul class="nav" id = "main-nav" name = "main-nav">
+            <li>
+				<a href="<%= projects_path%>" >Projects</a>
 			</li>
-			<li class = "divider-vertical">
-				<%= link_to 'Education', education_path%>
+			<li>
+				<a href="<%= educations_path%>">Education</a>
 			</li>	
 
           </ul>
         </div>
+		
+		<script type="text/javascript">
+		$('#main-nav li a').on('click', function() {
+		    $(this).parent().parent().find('.active').removeClass('active');
+		    $(this).parent().addClass('active');
+		});
+		</script>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
+	  <div class = "content" >
+	      <div class="row">
+	        <div class="span10"><%= yield %></div>
+	      </div>
+	  </div>
 
-
-      </div>
-    </div>
   </div>
   
-  
+  <hr>
 <footer class="footer" style="background-color:#f2f1f1;">
-    <div class="container" style="margin:0 auto;">
+    <div class="container" style=" margin:0 auto;">
         <div class="row">
             <div class="span2 offset2">
                 <p><a href="#">Fork me on Github</a></p>
