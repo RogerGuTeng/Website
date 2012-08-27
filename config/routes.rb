@@ -3,6 +3,8 @@ PersonalWeb::Application.routes.draw do
   resources :educations
 
   resources :projects
+  
+  resources :pages
 
     root :to => 'pages#homepage'
     

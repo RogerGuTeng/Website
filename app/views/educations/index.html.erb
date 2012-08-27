@@ -1,23 +1,43 @@
-<h1>Listing educations</h1>
+<h1>Education</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="container">
+	<div class= "row">
+        <div class="span6 ">
+			<section id ="carousel">
+				<div id = "myCarousel" class = "carousel slide">
+					<div class="carousel inner">
+						<div class = "active item">
+				 	       	<%= image_tag('columbia.png', :alt => 'TengGu') %>
+							<div class = "carousel-caption">
+								<h4>First</h4>
+								<p>This is the first</p>
+							</div>
+						</div>
+						<div class = "item">
+				 	       	<%= image_tag('alma.jpg', :alt => 'TengGu') %>
+							<div class = "carousel-caption">
+								<h4>Second</h4>
+								<p>This is the second</p>
+							</div>
+						</div>
+						<div class = "item">
+				 	       	<%= image_tag('CU_logo.jpg', :alt => 'TengGu') %>
+							<div class = "carousel-caption">
+								<h4>Third</h4>
+								<p>This is the third</p>
+							</div>
+						</div>
+						<a class="left carousel-control" href="#myCarousel" data-slide = "prev">&lsaquo;</a>
+						<a class="right carousel-control" href="#myCarousel" data-slide = "next">&rsaquo;</a>							
+					</div>
+				</div>
+			</section>	
+		</div>
+	</div>
+</div>
+<script >
+$('.carousel').carousel({
+  interval: 5000
+}).carousel('cycle')
+</script>
 
-<% @educations.each do |education| %>
-  <tr>
-    <td><%= education.name %></td>
-    <td><%= link_to 'Show', education %></td>
-    <td><%= link_to 'Edit', edit_education_path(education) %></td>
-    <td><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Education', new_education_path %>
