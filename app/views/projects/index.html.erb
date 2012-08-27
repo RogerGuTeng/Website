@@ -1,0 +1,116 @@
+<div class = "span10" >
+	<%= image_tag('projects_top.jpg', :alt => 'TengGu')%>
+</div>
+
+
+<h1>Projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>
+
+<ul class="thumbnails">
+  <li class="span7">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('philips.png', :alt => 'TengGu') %>
+		</a>
+      	<h3>Philips Intelligent Lighting</h3>
+		<h4>-- Android Client App and Tomcat Webserver</h4>	
+		<p>This project is a part of Intelligent Lighting and Daylight Controller (ILDC) project. 
+			The objective of this project is to take advantage of the mobility of tablet to make users 
+			control their working environment more conveniently and more efficiently. </p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+  
+  <li class="span3">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('OCR_main.png', :alt => 'TengGu') %>
+		</a>
+      	<h3>Manu Translation</h3>
+		<h4>-- Android Phone App</h4>	
+		<p>This app intends to help those people who can neither speak nor read Chinese, and have no way to search
+		the entrée name by their mobile device.</p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+  
+  <li class="span5">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('facebook.jpg', :alt => 'TengGu') %>
+		</a>
+      	<h3>Imporved Search for Facebook</h3>
+		<h4>-- Desktop App</h4>	
+		<p>Since the Search User Interface of Facebook is pretty disappointing, my teammates and I try to 
+		implement a more user-friendly UI to display the search result by using "cover flow".</p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+  
+  <li class="span5">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('E_R.jpg', :alt => 'TengGu') %>
+		</a>
+      	<h3>Musuem Management System</h3>
+		<h4>-- Database Project</h4>	
+		<p>This is a database project which has a simple web-based UI which can help managers and employees of
+			 the art museum do their daily management job more efficiently. </p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+  
+  <li class="span6">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('guesture.png', :alt => 'TengGu') %>
+		</a>
+      	<h3>Mouse Guesture Recognition</h3>
+		<h4>-- Desktop App</h4>	
+		<p>Bored with moving mouse and clicking buttons? This will help you a lot!</p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+  
+  <li class="span4">
+    <div class="thumbnail">
+		<a href = "#">
+	      	<%= image_tag('cad.jpg', :alt => 'TengGu') %>
+		</a>
+      	<h3>Circuit Retiming</h3>
+		<h4>-- As a part of CAD tools</h4>	
+		<p>Retiming algorithm addresses the problem of minimizing the cycle-time or the area of synchronous
+			 circuits by changing the position of the registers. This project implements several algorithm to
+		 realize read files, culculate the retiming curcuit automatically, and write files.</p>
+			
+		<a href = "#"> View Details</a>
+    </div>
+  </li>
+
+</ul>
